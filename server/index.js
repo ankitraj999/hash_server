@@ -18,7 +18,8 @@ const clustercode=process.env.MONGODB_CODE;
 let url=`mongodb+srv://${username}:${password}@${cluster}.${clustercode}.mongodb.net/${databasename}?retryWrites=true&w=majority&appName=Cluster0`;
 mongoose.connect(url)
 .then(()=>{ console.log("connected to the database")
-app.listen(8000,()=>{
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,()=>{
     console.log("server is running on port 8000")
 });
 })
